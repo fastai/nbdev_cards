@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "card.html",
+    "href": "card.html",
+    "title": "card–A basic playing card",
+    "section": "",
+    "text": "We will be using numbers to represent playing card clubs and ranks. These are the suits:\nFor instance the suit at index 0:\nThese are the ranks:\nFor instance the rank at index 1 (note that there isn’t a playing card at position 0, since we want the ranks to match the indicies where possible):\nHere’s an example of creating and displaying a card:"
+  },
+  {
+    "objectID": "card.html#comparison-operators",
+    "href": "card.html#comparison-operators",
+    "title": "card–A basic playing card",
+    "section": "Comparison operators",
+    "text": "Comparison operators\nEquality, less than, and greater than work on the rank and suit indices.\nFor instance, here’s a test of equality…\n\ntest_eq(Card(suit=1, rank=3), Card(suit=1, rank=3))\n\n…and a test of <…\n\nassert Card(suit=1, rank=3)<Card(suit=2, rank=3)\n\n…and finally of >:\n\nassert Card(suit=3, rank=3)>Card(suit=2, rank=3)\nassert not Card(suit=1, rank=3)>Card(suit=2, rank=3)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "nbdev_cards",
+    "section": "",
+    "text": "A deck of cards demo of nbdev based on ideas from Think Python 2nd Edition by Allen B. Downey."
+  },
+  {
+    "objectID": "index.html#install",
+    "href": "index.html#install",
+    "title": "nbdev_cards",
+    "section": "Install",
+    "text": "Install\nInstall using:\npip install nbdev-cards\nor:\nconda install -c fastai nbdev-cards"
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "nbdev_cards",
+    "section": "How to use",
+    "text": "How to use\nThis lib provides a Card class you can use to create, display, and compare playing cards:\n\nCard(1,3)\n\n3♦️\n\n\nSuits are numbered according to this list:\n\nsuits\n\n['♣️', '♦️', '❤️', '♠️']"
+  },
+  {
+    "objectID": "deck.html",
+    "href": "deck.html",
+    "title": "deck",
+    "section": "",
+    "text": "When we initially create a deck, all of the cards will be present:\n\ndeck = Deck()\ndeck\n\nA♣️; 2♣️; 3♣️; 4♣️; 5♣️; 6♣️; 7♣️; 8♣️; 9♣️; 10♣️; J♣️; Q♣️; K♣️; A♦️; 2♦️; 3♦️; 4♦️; 5♦️; 6♦️; 7♦️; 8♦️; 9♦️; 10♦️; J♦️; Q♦️; K♦️; A❤️; 2❤️; 3❤️; 4❤️; 5❤️; 6❤️; 7❤️; 8❤️; 9❤️; 10❤️; J❤️; Q❤️; K❤️; A♠️; 2♠️; 3♠️; 4♠️; 5♠️; 6♠️; 7♠️; 8♠️; 9♠️; 10♠️; J♠️; Q♠️; K♠️\n\n\nThat should be 52 cards.\n\ntest_eq(len(deck), 52)\n\nAs a reminder, these are the suits we defined for a Card:\n\nsuits\n\n['♣️', '♦️', '❤️', '♠️']\n\n\nWe can check if, say, the Ace of Clubs is in the deck:\n\nCard(1,1) in deck\n\nTrue\n\n\n\n\n\n\nDeck.pop\n\n Deck.pop (idx:int=-1)\n\nRemove one card from the deck\n\n\n\n\n\n\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\nidx\nint\n-1\nThe index of the card to remove, defaulting to the last one\n\n\n\n\n\n\n\ndeck = Deck()\ntest_eq(deck.pop(), Card(3,13))  # K♠️\n\nThere are 51 cards left in the deck now.\n\ntest_eq(len(deck), 51)\n\n\n\n\n\nDeck.remove\n\n Deck.remove (card:nbdev_cards.card.Card)\n\nRemoves card from the deck or raises exception if it is not there\n\n\n\n\nType\nDetails\n\n\n\n\ncard\nCard\nCard to remove\n\n\n\n\n\n\n\ncard23 = Card(2, 3)\ndeck.remove(card23)\n\nassert card23 not in deck\n\n\n\n\n\nDeck.shuffle\n\n Deck.shuffle ()\n\nShuffles the cards in this deck\n\n\n\n\n\n\n\ndraw_n\n\n draw_n (n:int, replace:bool=True)\n\nDraw n cards, with replacement iif replace\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\nn\nint\n\nnumber of cards to draw\n\n\nreplace\nbool\nTrue\nwhether or not draw with replacement\n\n\n\n\n\n\n\ndraw_n(13, replace=False)\n\n[Q♠️, 8❤️, 3♦️, 7♣️, 2♣️, 9♦️, 9♠️, 7♠️, 4♠️, K♣️, A♣️, 4♣️, 5♦️]"
+  }
+]
